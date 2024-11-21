@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>String Byte Size</title>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+  <h1>Calculate Byte Size</h1>
+  <label for="inputString">Enter a string:</label>
+  <input type="text" id="inputString" />
+  <button onclick="byteSize()">Calculate</button>
+  <p>Byte Size: <span id="result">0</span></p>
 
+  <script>
+    function byteSize() {
+      const input = document.getElementById("inputString").value;
+      const blob = new Blob([input]);
+      document.getElementById("result").textContent = blob.size;
+    }
+  </script>
 </body>
-
 </html>
